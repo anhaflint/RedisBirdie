@@ -305,10 +305,10 @@ class BirdieViews(object):
         #cherche les followers de l'utilisateur
         auth_followers = self.getUsersFromSet('followers:' + auth_username)
         
-        # friendUsernames = Redis.smembers('friends:' + username)
+        #cherche les amis de l'utilisateur dont le profil est visité
         friendUsernames = self.getUsersFromSet('friends:' + username)
 
-        #cherche les followers de l'utilisateur
+        #cherche les followers de l'utilisateur dont le profil est visité
         followers = self.getUsersFromSet('followers:' + username)
 
         return {'elapsed': get_elapsed,
